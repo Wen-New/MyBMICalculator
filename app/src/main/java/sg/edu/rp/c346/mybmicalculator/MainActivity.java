@@ -77,14 +77,19 @@ public class MainActivity extends AppCompatActivity {
                 float height = Float.parseFloat(etHeight.getText().toString());
                 bmi = weight / (height * height);
                 Intent intent = new Intent(getBaseContext(), SecondActivity.class);
+                String msg = "";
                 if (bmi < 18.5 && bmi > 0) {
-                    intent.putExtra("value", "You are Underweight!");
+                    msg = "You are Underweight!";
+                    intent.putExtra("value", msg);
                 } else if (bmi <= 24.9 && bmi >= 18.5) {
-                    intent.putExtra("value", "You are Normal!");
+                    msg = "You are Normal!";
+                    intent.putExtra("value", msg);
                 } else if (bmi <= 29.9 && bmi >= 25) {
-                    intent.putExtra("value", "You are Overweight!");
+                    msg = "You are Overweight!";
+                    intent.putExtra("value", msg);
                 } else if (bmi >= 30) {
-                    intent.putExtra("value", "You are Obese!");
+                    msg = "You are Obese!";
+                    intent.putExtra("value", msg);
                 }
                 startActivity(intent);
             }
